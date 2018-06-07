@@ -16,8 +16,7 @@ button {
   align-self: flex-start;
   margin-top: 15px;
   padding: 7px 15px;
-  background: rgba(0,0,0,0.2);
-  color: #ccc;
+  background: white;
   text-transform: uppercase;
   font-size: 1.1rem;
   border: none;
@@ -27,10 +26,6 @@ button:hover {
   background: #aaa;
   cursor: pointer;
   cursor: hand;
-}
-
-.logged {
-  color: white;
 }
 
 /* navbar layout */
@@ -165,20 +160,14 @@ header .filter:hover ul {
   display: block;
 }
 
-header .buttons {
-  display: flex;
-  flex-shrink: 0;
-  padding-right: 15px;
-}
-
-header .buttons .button {
+header .button {
   background: #111;
   padding: 13px;
   margin: 15px 7px;
 }
 
-header div h2,
-header div ul li a {
+header > div > h2,
+header > div > ul li a {
   font-family: "IBM Plex Sans", sans-serif;
   color: white;
   text-transform: uppercase;
@@ -319,21 +308,13 @@ div.card > .content {
   overflow-y: scroll;
 }
 
-div.card > .votes {
-  margin-top: 15px;
-}
-
-div.card > .votes span {
-  margin-right: 10px;
-}
-
 div.card > p.desc,
-div.card > .buttons {
+div.card > button {
   display: none;
 }
 
 div.card.active > p.desc,
-div.card.active > .buttons {
+div.card.active > button {
   display: block;
 }
 
@@ -373,18 +354,8 @@ div.modal-content input[name="content"] {
     margin: 0 auto;
   }
 
-  header .filter {
-    padding-bottom: 0;
-  }
-
-  header .buttons {
-    width: 100%;
-    padding: 0 10px;
+  header .button {
     margin-bottom: 15px;
-  }
-
-  header .buttons .login {
-    flex-grow: 1;
   }
 
   div.card.active {
@@ -393,24 +364,6 @@ div.modal-content input[name="content"] {
   }
 }
 
-@media screen and (max-width: 450px) {
-
-  header .filter {
-    padding-bottom: 10px;
-  }
-
-  header .buttons {
-    flex-wrap: wrap;
-  }
-
-  header .buttons .button {
-    flex-grow: 1;
-    margin: 7px;
-  }
-
-  header .buttons .login {
-    flex-basis: 100%;
-  }
+.logged {
+  color: white;
 }
-
-

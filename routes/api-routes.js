@@ -6,6 +6,8 @@
 
 // Requiring our models
 var db = require("../models");
+var Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 // Routes =============================================================
 const routing = {
@@ -26,6 +28,28 @@ const routing = {
       return bpOne;
     });
   },
+
+  //search function
+  searchBoilerplates: searchQuery => {
+    return db.Boilerplate.findAll({
+      where: {
+        [Op.or]: [
+          {
+            title: {
+              [Op.like]: "%" + searchQuery + "%"
+            }
+          },
+          {
+            description: {
+              [Op.like]: "%" + searchQuery + "%"
+            }
+          }
+        ]
+      },
+      include: [{ model: db.User }, { model: db.Tag }]
+    });
+  },
+
   // due to its dependence to db connection, this function is tested in api.int.test.js
   createBoilerplate: (title, description, lang, content, tags, userId, res) => {
     // FIXME tags management makes the test fail, pb of asynchronism
@@ -148,11 +172,17 @@ const routing = {
     //     });
     // });
 
+    app.post("/api/search", (req, res) => {
+      console.log("The query is " + req.body.searchQuery);
+      routing
+        .searchBoilerplates(req.body.searchQuery)
+        .then(result => res.json(result));
+    });
+
     app.post("/api/boilerplates", function(req, res) {
       // create takes an argument of an object describing the item we want to insert
       // into our table. In this case we just we pass in an object with a text and
       // complete property
-      console.log(req.body);
       routing.createBoilerplate(
         req.body.title,
         req.body.description,

@@ -19,11 +19,6 @@
   <!-- Modal CSS -->
   <link rel="stylesheet" type="text/css" media="screen" href="./modal.css" />
 
-  <!-- FontAwesome CSS -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-
-
   <script src="jscolor.js"></script>
   <!-- Bootstrap CSS -->
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
@@ -38,23 +33,22 @@
     </div>
 
     <div class="filter">
-      <input type="text" class="js-filter" name="filter" placeholder="Filter by term or tag">
+      <input type="text" class="js-filter" name="filter" placeholder="Filter by search term (or type a tag)">
     </div>
 
-    <div class="buttons">
-      <div class="add-card button" type="button">
-        <h2>+ <i class="fas fa-chalkboard"></i></h2>
-      </div>
-  
-      <div class="add-tag button">
-        <h2>+ <i class="fas fa-tag"></i></h2>
-      </div>
-  
-      <div class="login button">
-        <h2>
-          <a href="http://localhost:8080/auth/github">Login</a>
-        </h2>
-      </div>
+    <div class="add-card button" type="button">
+      <h2>Add card</h2>
+    </div>
+
+    <div class="add-tag button">
+      <h2>Add tag</h2>
+    </div>
+
+
+    <div class="login button">
+      <h2>
+        <a href="http://localhost:8080/auth/github">Login</a>
+      </h2>
     </div>
 
   </header>
@@ -65,10 +59,6 @@
       <div class="top">
         <h1 class="title">Some for loop I made</h1>
         <p class="tag">backend</p>
-        <p class="tag">backend</p>
-        <p class="tag">backend</p>
-        <p class="tag">backend</p>
-        <p class="tag">backend</p>
       </div>
       <p class="author">Ramzi Dreessen</p>
       <p class="desc">Built this using a little thang-thang in VS Code, probably something you could just google, but here it is!</p>
@@ -78,20 +68,13 @@
             const element = array[index];
         }
       </textarea>
-    
+
       <div class="buttons">
         <button class="js-copy-button">Copy</button>
         <button class="js-edit-button">Edit</button>
         <button class="js-delete-button">Delete</button>
       </div>
 
-      <div class="votes">
-          <i class="fas fa-thumbs-up"></i>
-          <span class="js-thumbs-up">3</span>
-          <i class="fas fa-thumbs-down"></i>
-          <span class="js-thumbs-down">1</span>
-      </div>
-      
     </div>
 
     <div class="card">
@@ -103,25 +86,18 @@
       <p class="desc">Built this using a little thang-thang in VS Code, probably something you could just google, but here it is!</p>
       <p class="lang">Javascript</p>
       <textarea class="content">
-for (let index = 0; index < array.length; index++) {
+  for (let index = 0; index < array.length; index++) {
     const element = array[index];
 }
     </textarea>
-  
-    <div class="buttons">
-      <button class="js-copy-button">Copy</button>
-      <button class="js-edit-button">Edit</button>
-      <button class="js-delete-button">Delete</button>
-    </div>  
 
-    <div class="votes">
-        <i class="fas fa-thumbs-up"></i>
-        <span class="js-thumbs-up">3</span>
-        <i class="fas fa-thumbs-down"></i>
-        <span class="js-thumbs-down">1</span>
+      <div class="buttons">
+        <button class="js-copy-button">Copy</button>
+        <button class="js-edit-button">Edit</button>
+        <button class="js-delete-button">Delete</button>
+      </div>
+
     </div>
-    
-  </div>
 
     <div class="card">
       <div class="top">
@@ -136,21 +112,14 @@ for (let index = 0; index < array.length; index++) {
     const element = array[index];
 }
     </textarea>
-  
-    <div class="buttons">
-      <button class="js-copy-button">Copy</button>
-      <button class="js-edit-button">Edit</button>
-      <button class="js-delete-button">Delete</button>
-    </div>  
 
-    <div class="votes">
-        <i class="fas fa-thumbs-up"></i>
-        <span class="js-thumbs-up">3</span>
-        <i class="fas fa-thumbs-down"></i>
-        <span class="js-thumbs-down">1</span>
+      <div class="buttons">
+        <button class="js-copy-button">Copy</button>
+        <button class="js-edit-button">Edit</button>
+        <button class="js-delete-button">Delete</button>
+      </div>
+
     </div>
-    
-  </div>
 
     <div class="card">
       <div class="top">
@@ -165,62 +134,58 @@ for (let index = 0; index < array.length; index++) {
     const element = array[index];
 }
     </textarea>
-  
-    <div class="buttons">
-      <button class="js-copy-button">Copy</button>
-      <button class="js-edit-button">Edit</button>
-      <button class="js-delete-button">Delete</button>
-    </div>  
 
-    <div class="votes">
-        <i class="fas fa-thumbs-up"></i>
-        <span class="js-thumbs-up">3</span>
-        <i class="fas fa-thumbs-down"></i>
-        <span class="js-thumbs-down">1</span>
+      <div class="buttons">
+        <button class="js-copy-button">Copy</button>
+        <button class="js-edit-button">Edit</button>
+        <button class="js-delete-button">Delete</button>
+      </div>
+
     </div>
-    
-  </div>
 
-    <!-- BOILERPLATE MODAL -->
-  <div class="modal" id="bpModal">
-  <div class="modal-content">
-    <span class ="close">&times;</span>
-    <h1>Submit your own boilerplate!</h1>
 
-    <label for="title">Title: </label>
-    <input type="text" id="title" name="title">
-    <label for="description">Description: </label>
-    <input type="text" id="description" name="description">
-    <label for="lang">Language (e.g. "Javascript"): </label>
-    <input type="text" id="lang" name="lang">
-    <label for="content">Your code: </label>
-    <input type="text" id="content" name="content">
-    <label for="tag" class="tag-label">Tag: </label>
-    <select id="tag-select">
-      <option value="tag1">Tags go here</option>
-      <option value="tag2">Tags go here</option>    </select>
-
-    <button class="post-boilerplate">Submit</button>
-  </div>
-</div>
-
-<div class="modalTag" id="tagModal">
-    <div class="modal-content">
-      <span class="closeTag">&times;</span>
-      <h1>Submit your own tags!</h1>
-  
-      <label for="tag-title">Title: </label>
-      <input type="text" id="tag-title" name="tag-title">
-      <label for="color">Color: </label>
-      <input type="text" id="color" name="color" class="jscolor">
-  
-      <button class="post-tag">Submit</button>
-    </div>
-  </div>
 
 
 
   </main>
+
+  <!-- BOILERPLATE MODAL -->
+  <div class="modal" id="bpModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1>Submit your own boilerplate!</h1>
+
+      <label for="title">Title: </label>
+      <input type="text" id="title" name="title">
+      <label for="description">Description: </label>
+      <input type="text" id="description" name="description">
+      <label for="lang">Language (e.g. "Javascript"): </label>
+      <input type="text" id="lang" name="lang">
+      <label for="content">Your code: </label>
+      <input type="text" id="content" name="content">
+      <label for="tag" class="tag-label">Tag: </label>
+      <select id="tag-select">
+        <option value="tag1">Tags go here</option>
+        <option value="tag2">Tags go here</option>
+      </select>
+
+      <button class="post-boilerplate">Submit</button>
+    </div>
+  </div>
+
+  <div class="modalTag" id="tagModal">
+    <div class="modal-content">
+      <span class="closeTag">&times;</span>
+      <h1>Submit your own tags!</h1>
+
+      <label for="tag-title">Title: </label>
+      <input type="text" id="tag-title" name="tag-title">
+      <label for="color">Color: </label>
+      <input type="text" id="color" name="color" class="jscolor">
+
+      <button class="post-tag">Submit</button>
+    </div>
+  </div>
 
 
   <footer>
@@ -232,13 +197,13 @@ for (let index = 0; index < array.length; index++) {
     <!-- Underscore.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.0/underscore-min.js"></script>
 
-    <!-- Widgets -->
-    <script src="./widgets.js"></script>
+
 
     <!-- AJAX -->
     <script src="./ajax.js"></script>
-
     <script src="./contents.js"></script>
+    <!-- Widgets -->
+    <script src="./widgets.js"></script>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->

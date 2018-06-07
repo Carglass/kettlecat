@@ -5,6 +5,19 @@ const getAllBoilerplates = function(cb) {
   });
 };
 
+const searchBoilerplates = function(query, cb) {
+  $.ajax({
+    url: "./api/search",
+    type: "POST",
+    data: {
+      searchQuery: query
+    },
+    success: function(result) {
+      cb(result);
+    }
+  });
+};
+
 const postBoilerplate = function(boilerplate, cb) {
   $.post(
     "./api/boilerplates",
